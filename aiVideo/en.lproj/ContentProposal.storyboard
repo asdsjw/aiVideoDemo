@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EIS-0g-xT3">
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--KitJS Content Proposal-->
+        <scene sceneID="rl4-DX-SgR">
+            <objects>
+                <viewController id="EIS-0g-xT3" customClass="KitJSContentProposal" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bqk-tt-p2c"/>
+                        <viewControllerLayoutGuide type="bottom" id="cdX-iC-cXq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hxK-29-C4t">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U90-u5-1Pi">
+                                <frame key="frameInset" minX="540" minY="864" width="380" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Last Watched"/>
+                                <connections>
+                                    <action selector="lastVideoBut:" destination="EIS-0g-xT3" eventType="primaryActionTriggered" id="x0c-AX-QC1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igz-bD-orW">
+                                <frame key="frameInset" minX="1000" minY="864" width="380" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Rururn To Video"/>
+                                <connections>
+                                    <action selector="returnToVideoBut:" destination="EIS-0g-xT3" eventType="primaryActionTriggered" id="ejw-6Y-nFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="lastVideoBut" destination="U90-u5-1Pi" id="VnM-zr-arf"/>
+                        <outlet property="returnToVideoBut" destination="igz-bD-orW" id="JfE-wf-Wyp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihi-fE-eCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="-375"/>
+        </scene>
+    </scenes>
+</document>
