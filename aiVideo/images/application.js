@@ -1,5 +1,7 @@
 var baseUrl;
 App.onLaunch = function(options) {
+    //xml <document><loadingTemplate title="加载中..." /></document>
+    //这个是自定义加载提示模版
     baseUrl=options.baseUrl;
     let xml=`<document>
   <head>

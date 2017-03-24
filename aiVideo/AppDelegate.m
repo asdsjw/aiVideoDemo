@@ -59,12 +59,39 @@
     NSURL *jsUrl = [baseUrl URLByAppendingPathComponent:@"application.js"];
     appControllerContext.javaScriptApplicationURL = jsUrl;
     
+    //自定义loadingTemplate
+    //自定义TVViewElement,并绑定javascript事件
+    [TVElementFactory registerViewElementClass:[JSLoadingTemplateElement class] forElementName:@"loadingTemplate"];
+    //建立扩展TVML的接口
+    [TVInterfaceFactory sharedInterfaceFactory].extendedInterfaceCreator = self;
+    
     appControllerContext.launchOptions = @{@"baseUrl":baseUrl.absoluteString};
 
     self.appController = [[TVApplicationController alloc] initWithContext:appControllerContext window:self.window delegate:self];
     return YES;
 }
 
+
+- (UIViewController *)viewControllerForElement:(TVViewElement *)element existingViewController:(UIViewController *)existingViewController {
+    
+    if ([element isKindOfClass:[JSLoadingTemplateElement class]]) {
+        JSLoadingTemplateViewController *loadControllerElement;
+        if (existingViewController) {
+            loadControllerElement = (JSLoadingTemplateViewController *)existingViewController;
+        }else {
+            loadControllerElement = [[JSLoadingTemplateViewController alloc] init];
+        }
+        
+        loadControllerElement.nightBool = false;
+        ////<document><loadingTemplate title="加载中..." /></document>
+        if (element.attributes[@"title"]) {
+            loadControllerElement.titleLabel = element.attributes[@"title"];
+        }
+        return loadControllerElement;
+    }
+    
+    return nil;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
