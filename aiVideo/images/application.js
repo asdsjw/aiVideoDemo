@@ -89,7 +89,7 @@ function playerDemo()
 {
     const player=new JSPlayer();
     player.playlist = new JSPlaylist();
-    //是否启用下一集宫
+    //是否启用下一集功能
 	player.skipForward=false;
 	//是否启用恢复时间提示框
 	player.resumeTime=false;
