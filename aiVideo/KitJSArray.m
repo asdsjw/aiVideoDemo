@@ -6,7 +6,7 @@
 //  Copyright © 2016年 asdsjw. All rights reserved.
 //
 //2016-10-9
-//不得已创建了一个JSArray,因为自带的数组受限只能达到850程度
+
 #import "KitJSArray.h"
 
 @implementation KitJSArray
