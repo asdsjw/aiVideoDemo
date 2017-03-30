@@ -1,7 +1,8 @@
 # aiVideoDemo
 爱视频的核心部件,演示JS构建播放器和自定义加载进度模版
 下方Demo使用Objective-c创建,大家都知道的其实苹果的下层还是obj,swift一边去
-
+2017.3.30
+发现一个有趣事情:使用定制的TVML 播放器要比JS TVML播放器CPU占有率普遍要高1/3-2/3
 asdsjw
 
 Apple TV4(tvos)的一份演示代码,于2016.8创建,经过一年时间测试效果良好
